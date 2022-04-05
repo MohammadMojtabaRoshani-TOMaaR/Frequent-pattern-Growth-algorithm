@@ -71,7 +71,7 @@ def remove_non_frequent_items(_item_set,_frequent_item):
     for i_item in _item_set:
         _temp_values = []
         for j_item in i_item:
-            if j_item in _frequent_item:
+            if j_item in _frequent_item and j_item not in _temp_values:
                 _temp_values.append(j_item)
         _final_result.append(_temp_values)
 

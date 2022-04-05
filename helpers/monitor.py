@@ -47,7 +47,6 @@ def process_monitor():
         create_time = datetime.fromtimestamp(main_process.create_time())
     except OSError:
         print(colored("Error> Can't make time stamp for monitoring process", "red"))
-        # create_time = datetime.fromtimestamp(psutil.boot_time())
 
     try:
         executive_cores = len(main_process.cpu_affinity())
