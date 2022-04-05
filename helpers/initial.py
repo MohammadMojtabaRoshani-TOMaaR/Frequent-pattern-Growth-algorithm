@@ -54,6 +54,8 @@ def frequent_item_sets_by_length_one(_items, _support):
             _one_length_result.append(item)
 
     counter = Counter(_one_length_result)
+    sorted(counter.items(), key=lambda pair: pair[1], reverse=True)
+
     _one_length_result = [x for x in counter.keys()]
     _one_length_frequent = [x for x in counter.values()]
 
@@ -76,7 +78,7 @@ def remove_non_frequent_items(_item_set,_frequent_item):
     _table = tabulate({"Item": _final_result}, headers="keys", showindex="always",tablefmt="simple")
 
     print(colored(
-        "Info> Table of frequents set:\n","blue"
+        "Info> Table of frequent sets:\n","blue"
         ),
         _table
     )
